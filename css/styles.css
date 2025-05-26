@@ -261,3 +261,10 @@ img{
         background-color: #6D5DE7;
 }
 
+#form_title_id {
+        text-align: center;
+}
+
+.welcome_title {
+        font-size: 1rem;
+}

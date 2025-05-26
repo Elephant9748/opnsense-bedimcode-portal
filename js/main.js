@@ -35,6 +35,7 @@ let modalmsg = document.getElementById("modal-msg");
 let msgstatus = document.getElementById("msg-status");
 let btnwelcome = document.getElementById("button_welcome");
 let formtitle = document.getElementById("form_title_id");
+let welcometitle = document.getElementById("welcome_title");
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -210,20 +211,24 @@ function userStatus() {
         btnanom.style.display = "none";
         btnlogout.style.display = "block";
         btnwelcome.style.display = "block";
-        formtitle.innerText = "Welcome to Nadya Portal";
-        formtitle.style.textiAlign = "center"
+        formtitle.style.textiAlign = "center";
+        welcometitle.style.display = "block";
         document.getElementById("block_input").style.display = "none";
       } else if (response.data.authType == "none") {
         btnlogin.style.display = "none";
         btnanom.style.display = "block";
         btnlogout.style.display = "none";
         btnwelcome.style.display = "none";
+        formtitle.style.textiAlign = "left";
+        welcometitle.style.display = "none";
         document.getElementById("block_input").style.display = "block";
       } else {
         btnlogin.style.display = "block";
         btnanom.style.display = "none";
         btnlogout.style.display = "none";
         btnwelcome.style.display = "none";
+        formtitle.style.textiAlign = "left";
+        welcometitle.style.display = "none";
         document.getElementById("block_input").style.display = "block";
       }
     })
