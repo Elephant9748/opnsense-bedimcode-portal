@@ -220,7 +220,7 @@ function userStatus() {
         btnanom.style.display = "none";
         btnlogout.style.display = "block";
         btnwelcome.style.display = "block";
-        formtitle.style.textiAlign = "center";
+        formtitle.style.textAlign = "center";
         welcometitle.style.display = "block";
         document.getElementById("showpassword").style.display = "none";
         document.getElementById("block_input").style.display = "none";
