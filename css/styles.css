@@ -281,12 +281,15 @@ img {
 }
 
 .showpassword {
-        text-align: right;
+        text-align: left;
 }
 
-.showpassword_title {
+.showpassword span {
         /* border: 1px solid black; */
-        font-size: 1.25em;
+        font-size: 1.1rem;
+        color: #99AEDD;
+        height: 1.5rem;
+
 }
 
 .showpassword input[type="checkbox"] {

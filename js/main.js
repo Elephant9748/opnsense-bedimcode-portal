@@ -222,6 +222,7 @@ function userStatus() {
         btnwelcome.style.display = "block";
         formtitle.style.textiAlign = "center";
         welcometitle.style.display = "block";
+        document.getElementById("showpassword").style.display = "none";
         document.getElementById("block_input").style.display = "none";
       } else if (response.data.authType == "none") {
         btnlogin.style.display = "none";
@@ -230,6 +231,7 @@ function userStatus() {
         btnwelcome.style.display = "none";
         formtitle.style.textiAlign = "left";
         welcometitle.style.display = "none";
+        document.getElementById("showpassword").style.display = "block";
         document.getElementById("block_input").style.display = "block";
       } else {
         btnlogin.style.display = "block";
@@ -238,6 +240,7 @@ function userStatus() {
         btnwelcome.style.display = "none";
         formtitle.style.textiAlign = "left";
         welcometitle.style.display = "none";
+        document.getElementById("showpassword").style.display = "block";
         document.getElementById("block_input").style.display = "block";
       }
     })
