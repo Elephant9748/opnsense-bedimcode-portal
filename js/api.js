@@ -7,17 +7,18 @@
  */
 
 $(document).ready(() => {
-    $.when($.loadSettings()).done(() => {
-        // applyCssSettings();
-        // initializeVantaEffect();
-        // updateLogo();
-        // setupLanguage();
-        // setupRulesSection();
-        // configureInputFocusBehavior();
         setupAuthHandlers();
-        // setupRulesLink();
-        // checkConnectionStatus();
-    });
+    // $.when($.loadSettings()).done(() => {
+    //     // applyCssSettings();
+    //     // initializeVantaEffect();
+    //     // updateLogo();
+    //     // setupLanguage();
+    //     // setupRulesSection();
+    //     // configureInputFocusBehavior();
+    //     setupAuthHandlers();
+    //     // setupRulesLink();
+    //     // checkConnectionStatus();
+    // });
 });
 
 const applyCssSettings = () => {

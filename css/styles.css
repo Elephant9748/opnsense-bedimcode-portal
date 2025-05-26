@@ -232,6 +232,21 @@ img{
 }
 
 
+/*===== Type of Button =====*/
+.button_login {
+        display: block;
+}
+
+.button_login_anom {
+        display: none;
+        background-color: #147D30;
+}
+
+.button_login_logout {
+        display: none;
+        background-color: #A33F6A;
+}
+
 
 /*===== Others =====*/
 

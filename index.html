@@ -10,11 +10,8 @@
 
     <link href="css/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
-    <title>Login form responsive</title>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/sprintf.min.js"></script>
-    <!-- <script src="js/cpModal.min.js"></script> -->
-    <script src="js/jquery.polyglot.language.switcher.js"></script>
+    <title>Nadya Portal Login</title>
+    <script src="js/axios.min.js"></script>
   </head>
   <body>
     <div class="l-form">
@@ -52,8 +49,10 @@
           <!-- <a href="#" class="form__forgot">Forgot Password?</a> -->
           <a href="#" class="form__forgot"></a>
 
-          <input type="submit" id="signin" class="form__button" value="Login" />
-          <!-- <button class="form__button" id="signin" type="button"> alternate</button> -->
+          <!-- <input type="submit" id="signin" class="form__button" value="Login" /> -->
+          <button id="btnlogin" class="button_login form__button" type="button">Login</button>
+          <button id="btnanom" class="button_login_anom form__button" type="button">Login-anonymous</button>
+          <button id="btnlogout" class="button_login_logout form__button" type="button">Logout</button>
 
           <div class="form__social">
             <span class="form__social-text">To get an account contact us!</span>
@@ -112,7 +111,5 @@
 
     <!-- ===== MAIN JS ===== -->
     <script src="js/main.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="js/api.js"></script>
   </body>
 </html>

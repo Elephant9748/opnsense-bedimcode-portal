@@ -243,27 +243,27 @@ $.clientInfo = async (data) => {
 
         appendInfo('wrapperTimeLeft flex-100', langText.cp_session_time_left, updateTimeLeft(timeLeft), 'time-left-value');
 
-        const timer = setInterval(() => {
-            timeLeft -= 60;
-
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                showModal({
-                    title: langText.cp_session_timeout_title,
-                    subtitle: langText.cp_session_timeout_info_title,
-                    content: langText.cp_session_timeout_content,
-                    iconText: '&#x27f3;',
-                    customStyles: {
-                        timeout: settings.modal.timeout,
-                        timeoutProgressbar: true,
-                        pauseOnHover: true
-                    },
-                    onClose: () => window.location.reload()
-                });
-            }
-
-            $('.wrapperTimeLeft .time-left-value').text(updateTimeLeft(timeLeft));
-        }, 60000);
+        // const timer = setInterval(() => {
+        //     timeLeft -= 60;
+        //
+        //     if (timeLeft <= 0) {
+        //         clearInterval(timer);
+        //         showModal({
+        //             title: langText.cp_session_timeout_title,
+        //             subtitle: langText.cp_session_timeout_info_title,
+        //             content: langText.cp_session_timeout_content,
+        //             iconText: '&#x27f3;',
+        //             customStyles: {
+        //                 timeout: settings.modal.timeout,
+        //                 timeoutProgressbar: true,
+        //                 pauseOnHover: true
+        //             },
+        //             onClose: () => window.location.reload()
+        //         });
+        //     }
+        //
+        //     $('.wrapperTimeLeft .time-left-value').text(updateTimeLeft(timeLeft));
+        // }, 60000);
     }
 };
 
@@ -364,9 +364,8 @@ $.authorisationFailed = (onClose = null) => {
     //
     // showModal(modal);
     $('#inputUsername, #inputPassword').val('');
-    $('#modal-msg').html('<span style="color:#0E0E0E;font-weight:bold">'langText.cp_error_info + langText.cp_error_solution_title + langText.cp_error_solution
-'</span>');
-    toggleModal()
+    $('#modal-msg').html('<span style="color:#0E0E0E;font-weight:bold">'langText.cp_error_info'</span>');
+    toggleModal();
 }
 
 $.showRules = () => {
@@ -386,7 +385,7 @@ $.showRules = () => {
 $.connectionFailed = () => {
     $('#inputUsername, #inputPassword').val('');
     $('#modal-msg').html('<span style="color:#0E0E0E;font-weight:bold">!Oops connection Failed...</span>');
-    toggleModal()
+    toggleModal();
 }
 
 $.connectionBlocked = (loginDelay) => {
@@ -414,6 +413,9 @@ $.connectionLogon = (data) => {
     }
 
     if (data.clientState == 'AUTHORIZED') {
+            // $('#modal-status').html('<span style="color:#0E0E0E;font-weight:bold"> Login Success...</span>');
+            // $('#modal-status').css('visibility','visible');
+
         if (settings.login.control && typeof data.loginTime !== 'undefined') {
             delete data.loginTime;
         }
