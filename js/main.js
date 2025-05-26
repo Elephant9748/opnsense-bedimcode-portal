@@ -222,7 +222,6 @@ function userStatus() {
         btnwelcome.style.display = "block";
         formtitle.style.textiAlign = "center";
         welcometitle.style.display = "block";
-        welcometitle.style.textiAlign = "center";
         document.getElementById("showpassword").style.display = "none";
         document.getElementById("block_input").style.display = "none";
       } else if (response.data.authType == "none") {

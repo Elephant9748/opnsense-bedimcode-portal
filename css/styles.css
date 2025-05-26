@@ -270,30 +270,21 @@ img {
   background-color: #6d5de7;
 }
 
-#form_title_id {
-}
-
 .welcome_title {
   display: none;
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.showpassword {
-        text-align: left;
-}
-
 .showpassword span {
-        /* border: 1px solid black; */
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #99AEDD;
-        height: 1.5rem;
 
 }
 
 .showpassword input[type="checkbox"] {
         width: 2em;
-        height: 1.5rem;
+        height: 1.25rem;
         accent-color: #24285B;
 }
 
