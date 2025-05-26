@@ -72,6 +72,15 @@ btnwelcome.addEventListener("click", () => {
 //   msgstatus.innerText = "unable to connect account not authorized...!";
 // }
 
+// showpasswod
+function showpassword() {
+        if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+        } else {
+                inputPassword.type = "password";
+        }
+}
+
 function getURLparams() {
   var vars = [],
     hash;
