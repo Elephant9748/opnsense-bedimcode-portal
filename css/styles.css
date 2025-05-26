@@ -248,6 +248,7 @@ img{
 }
 
 .button_welcome {
+        display: none;
         background-color: #188042;
 }
 

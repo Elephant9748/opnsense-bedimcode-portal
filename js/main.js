@@ -29,6 +29,11 @@ const closeButton = document.querySelector(".close-button");
 // let btnlogin = document.getElementById("btnlogin");
 let btnanom = document.getElementById("btnanom");
 let btnlogout = document.getElementById("btnlogout");
+let user = document.getElementById("inputUsername");
+let pass = document.getElementById("inputPassword");
+let modalmsg = document.getElementById("modal-msg");
+let msgstatus = document.getElementById("msg-status");
+let btnwelcome = document.getElementById("button_welcome");
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -48,23 +53,22 @@ btnanom.addEventListener("click", userAuthAnonym);
 btnlogout.addEventListener("click", userLogout);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
+btnwelcome.addEventListener("click", () => {
+        window.location = "https://search.brave.com/";
+});
 
 /*=== Axios Resuest===*/
-let user = document.getElementById("inputUsername");
-let pass = document.getElementById("inputPassword");
-let modalmsg = document.getElementById("modal-msg");
-let msgstatus = document.getElementById("msg-status");
 
 //Test Input
-function isInput() {
-  modalmsg.innerText = "username: " + user.value + " | password: " + pass.value;
-  console.log(msgstatus);
-  msgstatus.setAttribute(
-    "style",
-    "text-align:right;visibility:visible;color:#E54A20;font-weight:bold;",
-  );
-  msgstatus.innerText = "unable to connect account not authorized...!";
-}
+// function isInput() {
+//   modalmsg.innerText = "username: " + user.value + " | password: " + pass.value;
+//   console.log(msgstatus);
+//   msgstatus.setAttribute(
+//     "style",
+//     "text-align:right;visibility:visible;color:#E54A20;font-weight:bold;",
+//   );
+//   msgstatus.innerText = "unable to connect account not authorized...!";
+// }
 
 function getURLparams() {
   var vars = [],
@@ -95,11 +99,10 @@ function userAuthLogin() {
       console.log(response.data);
       if (response.data.clientState == "AUTHORIZED") {
         if (getURLparams()["redirurl"] != undefined) {
-          window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
-          // window.location = "http://" + getURLparams()["redirurl"] + "/success.html";
+          // window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
+          window.location = "http://" + getURLparams()["redirurl"] + "success.html";
         } else {
-          // window.location.reload();
-          window.location = "http://" + getURLparams()["redirurl"] + "/success.html";
+          window.location.reload();
         }
       } else {
         user.value = "";
@@ -139,7 +142,7 @@ function userAuthAnonym() {
       if (response.data.clientState == "AUTHORIZED") {
         if (getURLparams()["redirurl"] != undefined) {
           // window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
-          window.location = "http://" + getURLparams()["redirurl"] + "/success.html";
+          window.location = "http://" + getURLparams()["redirurl"] + "success.html";
         } else {
           window.location.reload();
         }
@@ -206,16 +209,19 @@ function userStatus() {
         btnlogin.style.display = "none";
         btnanom.style.display = "none";
         btnlogout.style.display = "block";
+        btnwelcome.style.display = "block";
         document.getElementById("block_input").style.display = "none";
       } else if (response.data.authType == "none") {
         btnlogin.style.display = "none";
         btnanom.style.display = "block";
         btnlogout.style.display = "none";
+        btnwelcome.style.display = "none";
         document.getElementById("block_input").style.display = "block";
       } else {
         btnlogin.style.display = "block";
         btnanom.style.display = "none";
         btnlogout.style.display = "none";
+        btnwelcome.style.display = "none";
         document.getElementById("block_input").style.display = "block";
       }
     })
