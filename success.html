@@ -11,7 +11,6 @@
     <link href="css/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
     <title>Nadya Portal Login</title>
-    <script src="js/axios.min.js"></script>
   </head>
   <body>
     <div class="l-form">
@@ -22,40 +21,11 @@
         <img src="images/authentication.svg" alt="" class="form__img" />
 
         <form class="form__content">
-          <h1 class="form__title">Nadya Portal</h1>
-
-          <div id="block_input">
-          <div class="form__div form__div-one">
-            <div class="form__icon">
-              <i class="bx bx-user-circle"></i>
-            </div>
-
-            <div class="form__div-input">
-              <label for="" class="form__label">Username</label>
-              <input type="text" id="inputUsername" class="form__input" />
-            </div>
-          </div>
-
-          <div class="form__div">
-            <div class="form__icon">
-              <i class="bx bx-lock"></i>
-            </div>
-
-            <div class="form__div-input">
-              <label for="" class="form__label">Password</label>
-              <input type="password" id="inputPassword" class="form__input" />
-            </div>
-          </div>
-          </div>
-          <p id="msg-status" style="text-align: right; visibility: hidden">
-            Status: message!
-          </p>
-          <!-- <a href="#" class="form__forgot">Forgot Password?</a> -->
-          <a href="#" class="form__forgot"></a>
+          <h1 style="text-align:center;" class="form__title">Success Login</h1>
 
           <!-- <input type="submit" id="signin" class="form__button" value="Login" /> -->
-          <button id="btnlogin" class="button_login form__button" type="button">
-            Login
+          <button class="button_welcome form__button" type="button">
+            Continue Browsing
           </button>
           <button
             id="btnanom"
@@ -73,7 +43,6 @@
           </button>
 
           <div class="form__social">
-            <span class="form__social-text">To get an account contact us!</span>
             <a
               href="https://signal.me/#eu/E94onDRUmVPGdum809aMo3eiO_g6CTRKWDklTTw3t8q-Yj6tbXNFta9uKYi4bsKy"
               target="_blank"
@@ -110,28 +79,6 @@
             ></a>
           </div>
         </form>
-        <!-- Modal -->
-        <div class="modal">
-          <div class="modal-content">
-            <!-- <span class="close-button">&times;</span> -->
-            <button
-              type="button"
-              id="signin"
-              class="form__button close-button"
-            ></button>
-            <!-- <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="" /> -->
-            <img src="images/authentication.svg" alt="" class="form__img" />
-            <h2 style="padding-left: 0.5rem">
-              <i class="bx bx-bell"></i> Nadya Portal
-            </h2>
-            <p style="padding: 1rem" id="modal-msg">No Content ...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
 
-    <!-- ===== MAIN JS ===== -->
-    <script src="js/main.js"></script>
   </body>
 </html>

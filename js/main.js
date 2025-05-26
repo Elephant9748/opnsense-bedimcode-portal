@@ -95,7 +95,8 @@ function userAuthLogin() {
       console.log(response.data);
       if (response.data.clientState == "AUTHORIZED") {
         if (getURLparams()["redirurl"] != undefined) {
-          window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
+          // window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
+          window.location = "http://" + getURLparams()["redirurl"] + "/success.html";
         } else {
           window.location.reload();
         }
@@ -136,7 +137,8 @@ function userAuthAnonym() {
       console.log(response.data);
       if (response.data.clientState == "AUTHORIZED") {
         if (getURLparams()["redirurl"] != undefined) {
-          window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
+          // window.location = "http://" + getURLparams()["redirurl"] + "?refresh";
+          window.location = "http://" + getURLparams()["redirurl"] + "/success.html";
         } else {
           window.location.reload();
         }
