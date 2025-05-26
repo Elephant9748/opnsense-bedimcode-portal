@@ -34,6 +34,7 @@ let pass = document.getElementById("inputPassword");
 let modalmsg = document.getElementById("modal-msg");
 let msgstatus = document.getElementById("msg-status");
 let btnwelcome = document.getElementById("button_welcome");
+let formtitle = document.getElementById("form_title_id");
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -209,6 +210,8 @@ function userStatus() {
         btnanom.style.display = "none";
         btnlogout.style.display = "block";
         btnwelcome.style.display = "block";
+        formtitle.innerText = "Welcome to Nadya Portal";
+        formtitle.style.textiAlign = "center"
         document.getElementById("block_input").style.display = "none";
       } else if (response.data.authType == "none") {
         btnlogin.style.display = "none";
