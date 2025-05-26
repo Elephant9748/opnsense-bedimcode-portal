@@ -26,7 +26,7 @@ inputs.forEach((input) => {
 const modal = document.querySelector(".modal");
 const btnlogin = document.querySelector(".form__button");
 const closeButton = document.querySelector(".close-button");
-let btnlogin = document.getElementById("btnlogin");
+// let btnlogin = document.getElementById("btnlogin");
 let btnanom = document.getElementById("btnanom");
 let btnlogout = document.getElementById("btnlogout");
 
@@ -176,16 +176,17 @@ function userLogout() {
     },
     url: "/api/captiveportal/access/logoff/",
     data: "user=" + logoff + "&password=" + logoff,
-  }).then(function (response) {
-    window.location.reload();
-  }).catch(function (error) {
+  })
+    .then(function (response) {
+      window.location.reload();
+    })
+    .catch(function (error) {
       msgstatus.setAttribute(
         "style",
         "text-align:right;visibility:visible;color:#E54A20;font-weight:bold;",
       );
       msgstatus.innerText = "unable to connect to  authentication server";
-          
-  });
+    });
 }
 
 function userStatus() {
@@ -195,34 +196,33 @@ function userStatus() {
       "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
     },
     url: "/api/captiveportal/access/status/",
-    data: "user=" + user.value + "&password=" + pass.value
-  }).then(function (response) {
-          if (response.data.clientState == "AUTHORIZED") {
-                  btnlogin.style.display = "none";
-                  btnanom.style.display = "none";
-                  btnlogout.style.display = "block";
-                  user.style.display = "none";
-                  pass.style.display = "none";
-          } else if (response.data.authType == "none") {
-                  btnlogin.style.display = "none";
-                  btnanom.style.display = "block";
-                  btnlogout.style.display = "none";
-                  user.style.display = "block";
-                  pass.style.display = "block";
-          } else {
-                  btnlogin.style.display = "block";
-                  btnanom.style.display = "none";
-                  btnlogout.style.display = "none";
-                  user.style.display = "block";
-                  pass.style.display = "block";
-          }
-  }).catch(function (error) {
+    data: "user=" + user.value + "&password=" + pass.value,
+  })
+    .then(function (response) {
+      if (response.data.clientState == "AUTHORIZED") {
+        btnlogin.style.display = "none";
+        btnanom.style.display = "none";
+        btnlogout.style.display = "block";
+        document.getElementById("block_input").style.display = "none";
+      } else if (response.data.authType == "none") {
+        btnlogin.style.display = "none";
+        btnanom.style.display = "block";
+        btnlogout.style.display = "none";
+        document.getElementById("block_input").style.display = "block";
+      } else {
+        btnlogin.style.display = "block";
+        btnanom.style.display = "none";
+        btnlogout.style.display = "none";
+        document.getElementById("block_input").style.display = "block";
+      }
+    })
+    .catch(function (error) {
       msgstatus.setAttribute(
         "style",
         "text-align:right;visibility:visible;color:#E54A20;font-weight:bold;",
       );
       msgstatus.innerText = "unable to connect to  authentication server";
-          
-  });
-
+    });
 }
+
+userStatus();
