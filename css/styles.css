@@ -9,6 +9,11 @@
   --text-color: #8590ad;
 }
 
+@font-face {
+        font-family: "boxicon-font";
+        src: url("css/boxicons/fonts/boxicons.ttf");
+}
+
 /*=== Fuente y tipografia ===*/
 :root {
   --body-font: "Roboto", sans-serif;
@@ -282,7 +287,7 @@ img {
 }
 
 .showpassword span {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
         color: #99AEDD;
         margin-left: 0.9rem;
 
